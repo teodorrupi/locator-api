@@ -3,6 +3,8 @@ package com.ris;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.jws.soap.SOAPBinding;
+
 /**
  * Created by teodor on 01/01/17.
  */
@@ -23,6 +25,16 @@ public class UserServiceImpl implements  UserService{
             e.printStackTrace();
             return new User();
         }
+    }
+
+    @Override
+    public User updatePointsByUsername(String username) {
+        User user = userRepository.findByUsername(username);
+        if(user!= null){
+            user.setPoints(user.getPoints() + 1);
+            return user;
+        }
+        return new User();
     }
 
     @Override
