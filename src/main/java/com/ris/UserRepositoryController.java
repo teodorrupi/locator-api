@@ -6,8 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+//import javax.servlet.http.HttpServletRequest;
+//import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by teodor on 01/01/17.
@@ -28,9 +28,9 @@ public class UserRepositoryController {
         //return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
     }
 
-    @ModelAttribute
-    protected void logging(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println(request.getHeaderNames().toString());
-        System.out.println(response);
-    }
+//    @ModelAttribute
+//    protected void logging(HttpServletRequest request, HttpServletResponse response) {
+//        System.out.println(request.getHeaderNames().toString());
+//        System.out.println(response);
+//    }
 }
