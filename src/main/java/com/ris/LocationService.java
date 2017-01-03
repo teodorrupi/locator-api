@@ -6,4 +6,8 @@ package com.ris;
 public interface LocationService {
 
     void addLocation(Location location);
+
+    void updateLocation(Location location);
+
+    void deleteAllLocations();
 }

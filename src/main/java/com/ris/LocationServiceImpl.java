@@ -17,4 +17,22 @@ public class LocationServiceImpl implements  LocationService{
     public void addLocation(Location location) {
         locationRepository.save(location);
     }
+
+    @Override
+    public void updateLocation(Location currentLocation) {
+        Location lastLocation = locationRepository.findByUsername(currentLocation.getUsername());
+        if(lastLocation != null){
+            lastLocation.setDate(currentLocation.getDate());
+            lastLocation.setLatitude(currentLocation.getLatitude());
+            lastLocation.setLongitude(currentLocation.getLongitude());
+            locationRepository.save(lastLocation);
+        }else {
+            locationRepository.save(currentLocation);
+        }
+    }
+
+    @Override
+    public void deleteAllLocations() {
+        locationRepository.deleteAll();
+    }
 }

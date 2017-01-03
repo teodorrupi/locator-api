@@ -7,6 +7,7 @@ public interface Mappings {
 
     String ID = "/{id}";
     String USER = "/user";
+    String LOCATION = "/location";
 
     String REWARD = "/reward";
     String DELETE_ALL = "/deleteAll";

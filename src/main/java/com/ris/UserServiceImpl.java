@@ -28,13 +28,14 @@ public class UserServiceImpl implements  UserService{
     }
 
     @Override
-    public User updatePointsByUsername(String username) {
+    public boolean updatePointsByUsername(String username) {
         User user = userRepository.findByUsername(username);
         if(user!= null){
             user.setPoints(user.getPoints() + 1);
-            return user;
+            userRepository.save(user);
+            return true;
         }
-        return new User();
+        return false;
     }
 
     @Override

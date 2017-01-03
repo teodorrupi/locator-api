@@ -7,7 +7,7 @@ public interface UserService {
 
     User updatePoints(String id);
 
-    User updatePointsByUsername(String username);
+    boolean updatePointsByUsername(String username);
 
     boolean verifyUsernameIsFree(String username);
 

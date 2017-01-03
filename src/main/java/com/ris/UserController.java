@@ -56,7 +56,7 @@ public class UserController {
             DateFormat formatter = new SimpleDateFormat("yyyy/MM/dd-HH:mm:ss");
             String dateFormatted = formatter.format(date);
             location.setDate(dateFormatted);
-            locationService.addLocation(location);
+            locationService.updateLocation(location);
             return true;
         }
         return false;
@@ -66,7 +66,7 @@ public class UserController {
     }
 
     @RequestMapping(Mappings.USERNAME + Mappings.REWARD)
-    public User rewardUser(@PathVariable("username") String username, Model model) {
+    public boolean rewardUser(@PathVariable("username") String username, Model model) {
         return userService.updatePointsByUsername(username);
 //        model.addAttribute("venue", venue);
 //        model.addAttribute(REGISTER_VENUE, "index_user_add_second_page");
